@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp">
+
+            <!-- Back Button -->
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:backgroundTint="@color/Primary"
+                android:src="@drawable/ic_arrow_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <!-- Profile Picture -->
+            <ImageView
+                android:id="@+id/profile_image"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_default_profile"
+                android:background="@drawable/circle_background"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Edit Icon -->
+            <ImageButton
+                android:id="@+id/btn_edit_image"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/circle_accent_background"
+                android:src="@drawable/baseline_edit_24"
+                android:contentDescription="Edit profile picture"
+                app:tint="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@id/profile_image"
+                app:layout_constraintEnd_toEndOf="@id/profile_image"
+                android:layout_margin="4dp" />
+
+            <!-- Profile Name -->
+            <TextView
+                android:id="@+id/profile_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Faisal AL-Zeer"
+                android:textColor="@color/Primary"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/profile_image"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp" />
+
+            <!-- Profile Email -->
+            <TextView
+                android:id="@+id/profile_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="faisal@example.com"
+                android:textColor="@color/gray"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/profile_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Profile Details Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Personal Information Section -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:text="Personal Information"
+                    android:textColor="@color/Primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/FirstName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:hint="Full name"
+                    android:importantForAccessibility="yes"
+                    android:padding="16dp"
+                    android:text="Faisal AL-Zeer"
+                    android:textColor="@color/Primary"
+                    android:textColorHint="@color/color_hint" />
+
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:hint="Email"
+                    android:importantForAccessibility="yes"
+                    android:padding="16dp"
+                    android:text="faisal@example.com"
+                    android:textColor="@color/Primary"
+                    android:textColorHint="@color/color_hint" />
+
+                <EditText
+                    android:id="@+id/phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:hint="Phone number"
+                    android:importantForAccessibility="yes"
+                    android:padding="16dp"
+                    android:text="+970 567791493"
+                    android:textColor="@color/Primary"
+                    android:textColorHint="@color/color_hint" />
+
+                <!-- Additional Fields -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="Additional Information: Bio"
+                    android:textColor="@color/Primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/bio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:hint="Bio"
+                    android:importantForAccessibility="yes"
+                    android:padding="16dp"
+                    android:text="Android Developer | Student"
+                    android:textColor="@color/Primary"
+                    android:textColorHint="@color/color_hint" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Action Buttons -->
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/Primary"
+            android:text="Save Changes"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btn_logout"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#E8EAF6"
+            android:text="Log Out"
+            android:textAllCaps="false"
+            android:textColor="#36417A"
+            android:textSize="16sp"/>
+    </LinearLayout>
+</ScrollView>

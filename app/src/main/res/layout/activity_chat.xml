@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Chat">
+
+    <!-- Top Bar -->
+    <LinearLayout
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/Primary"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <!-- Back Button -->
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="Back"
+            android:src="@drawable/baseline_arrow_back_ios_24"
+            app:tint="@color/white" />
+
+        <!-- User Info -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Adel Shurrab"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Online now"
+                android:textColor="#CBD1D7"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btn_call"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Voice call"
+            android:src="@drawable/baseline_call_24"
+            app:tint="@color/white" />
+
+        <ImageButton
+            android:id="@+id/btn_video_call"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Video call"
+            android:src="@drawable/ic_video_call"
+            app:tint="@color/white" />
+    </LinearLayout>
+
+    <!-- Chat Messages Container -->
+    <ScrollView
+        android:id="@+id/chat_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_above="@id/input_container"
+        android:layout_below="@id/bottom_bar"
+        android:background="@color/white"
+        android:fillViewport="true"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:id="@+id/chat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <!-- Incoming Message -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/im_home2"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/circle_home"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_default_profile" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/incoming_message_bg"
+                    android:padding="12dp"
+                    android:text="Hello Faisal"
+                    android:textColor="@color/Primary"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- Outgoing Message -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:gravity="end">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/outgoing_message_bg"
+                    android:padding="12dp"
+                    android:text="Hello Adel :)"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- Incoming Image Message -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/im_home3"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/circle_home"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_default_profile" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/home" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/incoming_message_bg"
+                        android:padding="12dp"
+                        android:text="My Home"
+                        android:textColor="@color/Primary"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Input Container -->
+    <LinearLayout
+        android:id="@+id/input_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:elevation="9dp"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <!-- Image Upload Button -->
+        <ImageButton
+            android:id="@+id/btn_add_image"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Add image"
+            android:src="@drawable/baseline_image_24"
+            app:tint="@color/Primary" />
+
+        <!-- Message Input Field -->
+        <EditText
+            android:id="@+id/et_message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/input_background"
+            android:hint="Type your message"
+            android:padding="12dp"
+            android:textColor="@color/Primary"
+            android:textColorHint="@color/gray" />
+
+        <!-- Send Button -->
+        <ImageButton
+            android:id="@+id/btn_send"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:backgroundTint="@color/Primary"
+            android:contentDescription="Send"
+            android:src="@drawable/baseline_send_24"
+            app:tint="@color/Primary" />
+    </LinearLayout>
+</RelativeLayout>
